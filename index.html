@@ -7,13 +7,69 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<!-- Plugins Css -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bower_components/ng-table/ng-table.min.css">
+		<!-- end -->
+
 		<link rel="stylesheet" href="css/normalize.min.css">
 		<link rel="stylesheet" href="css/main.css">
+		<link href="https://file.myfontastic.com/zW5RtETqdJFV73qJpf8PG9/icons.css" rel="stylesheet">
 
 	</head>
 	<body>
 
-		<p>Hola Mundo</p>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle navbar-toggle--icon collapsed icon-bars" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					</button>
+					<a class="navbar-brand" href="#" id="brand"></a>
+				</div>
 
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="navbar-collapse__links">
+						<a href="#">Enlace 1</a>
+						<span>|</span>
+						<a href="#">Enlace 2</a>
+					</div>
+				</div>
+			</div>
+		</nav>		
+
+		<div class="container detail">
+			<h3 class="detail__title">Titulo</h3>
+			<div class="detail__box">
+				<h4 class="detail__box__title">Titulo Caja</h4>
+			</div>
+			<div class="detail__box">
+				<h5 class="detail__box__subtitle">Lorem Ipsum</h5>
+				<ul class="detail__box__list">
+					<li>Dolor sir Amet, consectetur adipiscing elit</li>
+					<li>Dolor sir Amet, consectetur adipiscing elit</li>
+					<li>Dolor sir Amet, consectetur adipiscing elit</li>
+					<li>Dolor sir Amet, consectetur adipiscing elit</li>
+				</ul>
+
+				<textarea name="" id="" rows="7" class="detail__box__text">
+					
+Dolor sir Amet, consectetur adipiscing elit. Duis 			-$200.000.000.000.000.000
+mon tincidunt nulla. Morbi at sapien viverra,
+porttitor eros a.
+
+Dolor sir Amet, consectetur adipiscing elit 				-$200.000.000.000.000.000
+				</textarea>
+			</div>
+		</div>
+
+		<!-- Plugins JS -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/ng-table/ng-table.min.js"></script>
+		<!-- end -->
+
+		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

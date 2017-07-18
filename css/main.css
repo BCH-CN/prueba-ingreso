@@ -1,7 +1,7 @@
 html {
     color: #222;
     font-size: 1em;
-    line-height: 1.4;
+     line-height: 1.4; 
 }
 
 ::-moz-selection {
@@ -18,7 +18,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+     border-top: 1px solid #ccc; 
     margin: 1em 0;
     padding: 0;
 }
@@ -54,6 +54,72 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.navbar{
+    background-color: #002157;
+    border-radius: 0;
+}
+.navbar-default{
+    border: none;
+}
+.navbar-toggle--icon{
+    border:none;
+    color:white;
+    font-size: 25px;
+    padding: 0;
+    height: auto;
+    margin-top: 18px;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+    background-color: transparent;
+}
+.navbar-collapse{
+    position: absolute;
+    right: 0;
+    top:0;
+    padding-top: 5px;
+}
+.navbar-collapse__links a{
+    color:white;
+    padding: 5px;
+}
+.navbar-collapse__links span{
+    color:white;
+}
+#brand{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    line-height: 40px;
+    width:250px;
+    background-image: url('../img/logo-sprite.png');
+    background-repeat: no-repeat;
+}
+.detail__title{
+    color:#002157;
+}
+.detail__box{
+    border: 1px solid #dcdcdd;
+    background-color: #F6F6F8;
+    padding: 10px;
+    color: #7C7C7E;
+}
+.detail__box__list{
+    list-style-type: none;
+    padding-left: 0;
+}
+.detail__box__list li::before{
+    content:"-";
+    /* position: absolute; */
+    color: white;
+    padding-right: 5px;
+}
+.detail__box__text{
+    width: 100%;
+    padding-left: 15px;
+    resize: none;
+    border: 1px solid #dcdcdd;
+}
 
 
 
@@ -61,12 +127,50 @@ textarea {
 
 
 
-
-
-
-
-
-
+/* Modifica el breakpoint por defecto del navbar de bootstrap */
+@media (max-width: 991px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+      position: relative;
+  }
+  .navbar-collapse__links span{
+        display: none;
+    }
+    .navbar-collapse__links a{
+        display: block;
+    }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+}
 
 /* ==========================================================================
    Media Queries
