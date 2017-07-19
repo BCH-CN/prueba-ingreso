@@ -10,6 +10,7 @@
 		<!-- Plugins Css -->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="bower_components/ng-table/ng-table.min.css">
+		<link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
 		<!--[if lt IE 9]>
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <![endif]-->
@@ -67,18 +68,86 @@ Dolor sir Amet, consectetur adipiscing elit 				-$200.000.000.000.000.000
 				</div>
 			</div>
 		</div>
+
+		<div class="container filter">
+			<div class="filter__top col-sm-12">
+				<div class="filter__top__title col-sm-6">
+					<h6>Total Items: {{register.length}}</h6>
+				</div>
+				<div class="filter__top__title col-sm-6 text-right">
+					<button class="btn btn-default btn-sm" data-toggle="collapse" data-target="#filters">Cerrar</button>
+				</div>
+			</div>
+			<div class="filter__body col-sm-12 collapse" id="filters">
+				<div class="row filter__body__line">
+					<div class="col-md-3 col-xs-6">
+						<div class='input-group date datetimepicker'>
+                			<input type='text' class="form-control" placeholder="Seleccione"/>
+                			<span class="input-group-addon">
+                    			<span class="glyphicon glyphicon-calendar"></span>
+                			</span>
+            			</div>
+					</div>
+					<div class="col-md-3 col-xs-6">
+						<div class='input-group date datetimepicker'>
+                			<input type='text' class="form-control" placeholder="Seleccione"/>
+                			<span class="input-group-addon">
+                    			<span class="glyphicon glyphicon-calendar"></span>
+                			</span>
+            			</div>
+					</div>
+					<div class="col-md-3">
+						<select name="" id="" class="form-control">
+							<option value="">Seleccione</option>
+							<option value="">Opción 1</option>
+							<option value="">Opción 2</option>
+						</select>
+					</div>
+				</div>	
+				<div class="row filter__body__line">
+					<div class="col-md-6">
+						<input type="text" class="form-control" placeholder="Busqueda General..">
+					</div>
+					<div class="col-md-6 text-right">
+						<button class="btn btn-success btn-sm">Buscar</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		
-		<div class="table col-md-12">
-			<table ng-table="registerTable" class="table">
-				<tr ng-repeat="r in register">
-					<td data-title=""><input type="checkbox"></td>
-					<td data-title="'Lorem'">{{r.lorem}}</td>
-					<td data-title="'Ipsum'">{{r.ipsum}}</td>
-					<td data-title="'Dolor'">{{r.dolor}}</td>
-					<td data-title="'Sit'">{{r.sit}}</td>
-					<td data-title="'Amet'">{{r.amet | currency:undefined:0}}</td>
-				</tr>
-			</table>
+		<div class="container">
+			<div class="table">
+				<table class="table">
+					<thead>
+						<tr>
+							<td data-title="" class="table--radio"></td>
+							<td>Lorem</td>
+							<td>Ipsum</td>
+							<td>Dolor</td>
+							<td>Sit</td>
+							<td>Amet</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="r in register | startFromGrid: currentPage * pageSize | limitTo: pageSize">
+							<td data-title="" class="table--radio"><input type="checkbox"></td>
+							<td data-title="'Lorem'">{{r.lorem}}</td>
+							<td data-title="'Ipsum'">{{r.ipsum}}</td>
+							<td data-title="'Dolor'">{{r.dolor}}</td>
+							<td data-title="'Sit'">{{r.sit}}</td>
+							<td data-title="'Amet'">{{r.amet | currency:undefined:0}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="text-center">
+				<div class='btn-group'>
+					<button type='button' class='btn btn-default' ng-disabled='currentPage == 0' ng-click='currentPage = currentPage - 1'>&laquo;</button>
+					<button type='button' class='btn btn-default' ng-disabled='currentPage == page.no - 1' ng-click='setPage(page.no)' ng-repeat='page in pages'>{{page.no}}</button>
+					<button type='button' class='btn btn-default' ng-disabled='currentPage >= usuarios.length/pageSize - 1', ng-click='currentPage = currentPage + 1'>&raquo;</button>
+				</div>
+			</div>
 		</div>
 
 
@@ -87,6 +156,7 @@ Dolor sir Amet, consectetur adipiscing elit 				-$200.000.000.000.000.000
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="bower_components/ng-table/ng-table.min.js"></script>
+		<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 		<!-- end -->
 
 		<script src="js/vendor/modernizr-2.8.3.min.js"></script>

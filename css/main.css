@@ -53,7 +53,9 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
+body{
+    padding-bottom: 25px;
+}
 .navbar{
     background-color: #002157;
     border-radius: 0;
@@ -125,20 +127,38 @@ textarea {
     resize: none;
     border: 1px solid #dcdcdd;
 }
-.table table thead{
+.table{
+    margin-top: 1.5em;
+}
+.table table{
+    border: 1px solid #dcdcdd;
+}
+.table table thead tr:first-child{
+    font-weight: bold;
     background-color: #F6F6F8;
 }
 .table table tr td{
     text-align: center;
 }
+.filter__top{
+    background-color: #F6F6F8;
+    border: 1px solid #dcdcdd;
+    padding: 5px;
+    margin-top: 1.5em;
+}
+.filter__top__title h6{
+    font-weight: bold;
+}
+.filter__body{
+    background-color: #F6F6F8;
+    border: 1px solid #dcdcdd;
+    padding: 15px;
+}
+.filter__body__line{
+    padding: 10px 0 10px 0;
+}
 
-
-
-
-
-
-
-/* Modifica el breakpoint por defecto del navbar de bootstrap */
+/* Custom Media Query */
 @media (max-width: 991px) {
   .navbar-header {
       float: none;
@@ -181,6 +201,15 @@ textarea {
   .collapse.in{
       display:block !important;
   }
+  .table--radio{
+        display:none;
+    }
+    .filter__body__line{
+        padding: 0;
+    }
+    .filter__body__line>div{
+        padding: 10px;
+    }
 }
 
 /* ==========================================================================
