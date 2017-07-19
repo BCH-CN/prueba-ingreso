@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app="banco">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -10,6 +10,9 @@
 		<!-- Plugins Css -->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="bower_components/ng-table/ng-table.min.css">
+		<!--[if lt IE 9]>
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <![endif]-->
 		<!-- end -->
 
 		<link rel="stylesheet" href="css/normalize.min.css">
@@ -17,7 +20,7 @@
 		<link href="https://file.myfontastic.com/zW5RtETqdJFV73qJpf8PG9/icons.css" rel="stylesheet">
 
 	</head>
-	<body>
+	<body ng-controller="bancoController">
 
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -39,28 +42,45 @@
 
 		<div class="container detail">
 			<h3 class="detail__title">Titulo</h3>
-			<div class="detail__box">
+			<div class="detail__box col-md-12">
 				<h4 class="detail__box__title">Titulo Caja</h4>
 			</div>
-			<div class="detail__box">
-				<h5 class="detail__box__subtitle">Lorem Ipsum</h5>
-				<ul class="detail__box__list">
-					<li>Dolor sir Amet, consectetur adipiscing elit</li>
-					<li>Dolor sir Amet, consectetur adipiscing elit</li>
-					<li>Dolor sir Amet, consectetur adipiscing elit</li>
-					<li>Dolor sir Amet, consectetur adipiscing elit</li>
-				</ul>
-
-				<textarea name="" id="" rows="7" class="detail__box__text">
-					
+			<div class="detail__box container-fluid">
+				<div class="col-md-4">
+					<h5 class="detail__box__subtitle">Lorem Ipsum</h5>
+					<ul class="detail__box__list">
+						<li>Dolor sir Amet, consectetur adipiscing elit</li>
+						<li>Dolor sir Amet, consectetur adipiscing elit</li>
+						<li>Dolor sir Amet, consectetur adipiscing elit</li>
+						<li>Dolor sir Amet, consectetur adipiscing elit</li>
+					</ul>
+				</div>
+				<div class="col-md-8">
+					<textarea name="" id="" rows="7" class="detail__box__text">
+						
 Dolor sir Amet, consectetur adipiscing elit. Duis 			-$200.000.000.000.000.000
 mon tincidunt nulla. Morbi at sapien viverra,
 porttitor eros a.
 
 Dolor sir Amet, consectetur adipiscing elit 				-$200.000.000.000.000.000
-				</textarea>
+					</textarea>
+				</div>
 			</div>
 		</div>
+		
+		<div class="table col-md-12">
+			<table ng-table="registerTable" class="table">
+				<tr ng-repeat="r in register">
+					<td data-title=""><input type="checkbox"></td>
+					<td data-title="'Lorem'">{{r.lorem}}</td>
+					<td data-title="'Ipsum'">{{r.ipsum}}</td>
+					<td data-title="'Dolor'">{{r.dolor}}</td>
+					<td data-title="'Sit'">{{r.sit}}</td>
+					<td data-title="'Amet'">{{r.amet | currency:undefined:0}}</td>
+				</tr>
+			</table>
+		</div>
+
 
 		<!-- Plugins JS -->
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
