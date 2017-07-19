@@ -82,7 +82,7 @@ Dolor sir Amet, consectetur adipiscing elit 				-$200.000.000.000.000.000
 				<div class="row filter__body__line">
 					<div class="col-md-3 col-xs-6">
 						<div class='input-group date datetimepicker'>
-                			<input type='text' class="form-control" placeholder="Seleccione"/>
+                			<input type='text' class="form-control" placeholder="Seleccione" ng-model="startDate"/>
                 			<span class="input-group-addon">
                     			<span class="glyphicon glyphicon-calendar"></span>
                 			</span>
@@ -90,23 +90,23 @@ Dolor sir Amet, consectetur adipiscing elit 				-$200.000.000.000.000.000
 					</div>
 					<div class="col-md-3 col-xs-6">
 						<div class='input-group date datetimepicker'>
-                			<input type='text' class="form-control" placeholder="Seleccione"/>
+                			<input type='text' class="form-control" placeholder="Seleccione" ng-model="endDate"/>
                 			<span class="input-group-addon">
                     			<span class="glyphicon glyphicon-calendar"></span>
                 			</span>
             			</div>
 					</div>
 					<div class="col-md-3">
-						<select name="" id="" class="form-control">
+						<select name="" id="" class="form-control" ng-model="tipo">
 							<option value="">Seleccione</option>
-							<option value="">Opción 1</option>
-							<option value="">Opción 2</option>
+							<option value="abono">Abono</option>
+							<option value="cargo">Cargo</option>
 						</select>
 					</div>
 				</div>	
 				<div class="row filter__body__line">
 					<div class="col-md-6">
-						<input type="text" class="form-control" placeholder="Busqueda General..">
+						<input type="text" class="form-control" ng-model="search" placeholder="Busqueda General..">
 					</div>
 					<div class="col-md-6 text-right">
 						<button class="btn btn-success btn-sm">Buscar</button>
@@ -121,21 +121,21 @@ Dolor sir Amet, consectetur adipiscing elit 				-$200.000.000.000.000.000
 					<thead>
 						<tr>
 							<td data-title="" class="table--radio"></td>
-							<td>Lorem</td>
-							<td>Ipsum</td>
-							<td>Dolor</td>
-							<td>Sit</td>
-							<td>Amet</td>
+							<td>Fecha</td>
+							<td>Nombre</td>
+							<td>Tipo</td>
+							<td>Estado</td>
+							<td>Monto</td>
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="r in register | startFromGrid: currentPage * pageSize | limitTo: pageSize">
+						<tr ng-repeat="r in register | startDate:{startDate} | endDate:{endDate} | tipo:{tipo} | generalFilter: {search} | startFromGrid: currentPage * pageSize | limitTo: pageSize">
 							<td data-title="" class="table--radio"><input type="checkbox"></td>
-							<td data-title="'Lorem'">{{r.lorem}}</td>
-							<td data-title="'Ipsum'">{{r.ipsum}}</td>
-							<td data-title="'Dolor'">{{r.dolor}}</td>
-							<td data-title="'Sit'">{{r.sit}}</td>
-							<td data-title="'Amet'">{{r.amet | currency:undefined:0}}</td>
+							<td data-title="'Fecha'">{{r.fecha}}</td>
+							<td data-title="'Nombre'">{{r.nombre}}</td>
+							<td data-title="'Tipo'">{{r.tipo}}</td>
+							<td data-title="'Estado'">{{r.estado}}</td>
+							<td data-title="'Monto'">{{r.monto | currency:undefined:0}}</td>
 						</tr>
 					</tbody>
 				</table>
