@@ -1,7 +1,7 @@
 html {
     color: #222;
     font-size: 1em;
-    line-height: 1.4;
+     line-height: 1.4; 
 }
 
 ::-moz-selection {
@@ -18,7 +18,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+     border-top: 1px solid #ccc; 
     margin: 1em 0;
     padding: 0;
 }
@@ -53,20 +53,164 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+body{
+    padding-bottom: 25px;
+}
+.navbar{
+    background-color: #002157;
+    border-radius: 0;
+}
+.navbar-default{
+    border: none;
+}
+.navbar-toggle--icon{
+    border:none;
+    color:white;
+    font-size: 25px;
+    padding: 0;
+    height: auto;
+    margin-top: 18px;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+    background-color: transparent;
+}
+.navbar-collapse{
+    position: absolute;
+    right: 0;
+    top:0;
+    padding-top: 5px;
+}
+.navbar-collapse__links a{
+    color:white;
+    padding: 5px;
+}
+.navbar-collapse__links span{
+    color:white;
+}
+#brand{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    line-height: 40px;
+    width:250px;
+    background-image: url('../img/logo-sprite.png');
+    background-repeat: no-repeat;
+}
+.detail__title{
+    color:#002157;
+}
+.detail__box{
+    border: 1px solid #dcdcdd;
+    background-color: #F6F6F8;
+    color: #7C7C7E;
+    padding: 10px 0 10px 0;
+}
+.detail__box div{
+    padding-top: 10px;
+}
+.detail__box__title{
+    padding-left: 10px;
+}
+.detail__box__list{
+    list-style-type: none;
+    padding-left: 0;
+}
+.detail__box__list li::before{
+    content:"-";
+    color: #7C7C7E;
+    padding-right: 5px;
+}
+.detail__box__text{
+    width: 100%;
+    padding-left: 15px;
+    resize: none;
+    border: 1px solid #dcdcdd;
+}
+.table{
+    margin-top: 1.5em;
+}
+.table table{
+    border: 1px solid #dcdcdd;
+}
+.table table thead tr:first-child{
+    font-weight: bold;
+    background-color: #F6F6F8;
+}
+.table table tr td{
+    text-align: center;
+}
+.filter__top{
+    background-color: #F6F6F8;
+    border: 1px solid #dcdcdd;
+    padding: 5px;
+    margin-top: 1.5em;
+}
+.filter__top__title h6{
+    font-weight: bold;
+}
+.filter__body{
+    background-color: #F6F6F8;
+    border: 1px solid #dcdcdd;
+    padding: 15px;
+}
+.filter__body__line{
+    padding: 10px 0 10px 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Custom Media Query */
+@media (max-width: 991px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+      position: relative;
+  }
+  .navbar-collapse__links span{
+        display: none;
+    }
+    .navbar-collapse__links a{
+        display: block;
+    }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+  .table--radio{
+        display:none;
+    }
+    .filter__body__line{
+        padding: 0;
+    }
+    .filter__body__line>div{
+        padding: 10px;
+    }
+}
 
 /* ==========================================================================
    Media Queries
